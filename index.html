@@ -462,16 +462,7 @@
                 document.querySelector('.follow-marker-button').style.backgroundColor = 'white';
             });
         }
-
-
-        // var map = L.map('map', {
-        //     zoomControl: false,
-        //     attributionControl: false
-        // }).setView([0, 0], 19);
-
-        // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        //     maxZoom: 19,
-        // }).addTo(map);
+        
 
         var sourceLocation;
         var destinationLocation;
@@ -554,13 +545,6 @@
             .catch(error => console.error('Error fetching coordinates.json:', error));
 
 
-        // L.control.layers(baseMaps).addTo(map);
-
-        // var polyline = L.polyline([
-        //     [0, 0],
-        //     [1, 1]
-        // ], { color: 'black' }).addTo(map); // Initial polyline color is black
-
         var isStreetView = true;
 
         function toggleMapLayer() {
@@ -581,8 +565,6 @@
         }
 
 
-
-
         var studentStopMarker = L.marker(studentStopLocation, {
             icon: L.icon({
                 iconUrl: 'img/studentStop.png',
@@ -601,11 +583,6 @@
             });
         });
 
-        // map.on('zoomstart', function () {
-        //     shouldFollowMarker = false;
-        //     console.log(shouldFollowMarker);
-        //     document.querySelector('.follow-marker-button').style.backgroundColor = 'yellow';
-        // });
 
         map.on('dragstart', function () {
             shouldFollowMarker = false;
